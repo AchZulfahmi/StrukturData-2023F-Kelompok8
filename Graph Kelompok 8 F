@@ -27,3 +27,33 @@ class Peta:
             self.cityList[kota1].append(kota2)
             return True
         return False
+
+peta_jawa_tengah = Peta()
+kota_list_jawa_tengah = ["Semarang",
+                          "Yogyakarta",
+                          "Surakarta",
+                          "Salatiga",
+                          "Pekalongan",
+                          "Tegal",
+                          "Magelang",
+                          "Purwokerto",
+                          "Purbalingga",
+                          "Wonosobo",
+                          "Kebumen",
+                          "Cilacap",
+                          "Banyumas",
+                          "Banjarnegara",
+                          "Pemalang"]
+
+for kota in kota_list_jawa_tengah:
+    peta_jawa_tengah.tambahkanKota(kota)
+
+edges_jawa_tengah = [("Semarang", "Yogyakarta"),
+                     ("Semarang", "Salatiga"),
+                     ("Semarang", "Pekalongan"),
+                     ("Semarang", "Tegal"), 
+                     ("Yogyakarta", "Surakarta"),
+                     ("Surakarta", "Salatiga"),
+                     ("Salatiga", "Pekalongan"),
+                     ("Pekalongan", "Tegal"), 
+                     ("Tegal", "Magelang"),
