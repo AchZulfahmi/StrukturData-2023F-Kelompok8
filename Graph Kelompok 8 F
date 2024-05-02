@@ -57,3 +57,34 @@ edges_jawa_tengah = [("Semarang", "Yogyakarta"),
                      ("Salatiga", "Pekalongan"),
                      ("Pekalongan", "Tegal"), 
                      ("Tegal", "Magelang"),
+                     ("Magelang", "Purwokerto"),
+                     ("Purwokerto", "Purbalingga"), 
+                     ("Purbalingga", "Wonosobo"),
+                     ("Wonosobo", "Kebumen"),
+                     ("Kebumen", "Cilacap"),
+                     ("Cilacap", "Banyumas"), 
+                     ("Banyumas", "Banjarnegara"),
+                     ("Banjarnegara", "Pemalang"),
+                     ("Pemalang", "Cilacap"),
+                     ("Yogyakarta", "Salatiga"),
+                     ("Magelang", "Surakarta"),
+                     ("Semarang", "Magelang"),
+                     ("Wonosobo", "Yogyakarta"),
+                     ("Kebumen", "Yogyakarta"),
+                     ("Cilacap", "Tegal"),
+                     ("Tegal", "Purwokerto"),
+                     ("Kebumen", "Magelang"),
+                     ("Yogyakarta", "Cilacap"),
+                     ("Semarang", "Surakarta"),
+                     ("Purbalingga", "Tegal"),
+                     ("Wonosobo", "Pekalongan")]
+
+for edge in edges_jawa_tengah:
+    peta_jawa_tengah.tambahkanJalan(edge[0], edge[1])
+
+peta_jawa_tengah.printPeta()
+print('----------------------------------------------')
+
+peta_jawa_tengah.hapusKota("Salatiga")
+
+peta_jawa_tengah.printPeta()
