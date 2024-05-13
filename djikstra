@@ -36,3 +36,41 @@ class Peta:
         while unvisitedCities:
             minJarak = float('inf')
             dekatKota = None
+
+            for kota in unvisitedCities:
+                if jarak[kota] < minJarak:
+                    minJarak = jarak[kota]
+                    dekatKota = kota
+            unvisitedCities.remove(dekatKota)
+
+            for neighbor, weight in self.cityList[dekatKota].items():
+                jarakNeighbor = jarak[dekatKota] + weight[0]
+                if jarakNeighbor < jarak[neighbor]:
+                    jarak[neighbor] = jarakNeighbor
+
+        return jarak
+
+peta_jawa_tengah = Peta()
+kota_list_jawa_tengah = ["Semarang",
+                          "Yogyakarta",
+                          "Surakarta",
+                          "Salatiga",
+                          "Pekalongan",
+                          "Tegal",
+                          "Magelang",
+                          "Purwokerto",
+                          "Purbalingga",
+                          "Wonosobo",
+                          "Kebumen",
+                          "Cilacap",
+                          "Banyumas",
+                          "Banjarnegara",
+                          "Pemalang"]
+
+print ('========================================================================================')
+
+for kota in kota_list_jawa_tengah:
+    peta_jawa_tengah.tambahkanKota(kota)
+
+edges_jawa_tengah = [("Semarang", "Yogyakarta", 121),
+                     ("Semarang", "Salatiga", 47),
