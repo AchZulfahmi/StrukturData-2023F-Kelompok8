@@ -74,3 +74,42 @@ for kota in kota_list_jawa_tengah:
 
 edges_jawa_tengah = [("Semarang", "Yogyakarta", 121),
                      ("Semarang", "Salatiga", 47),
+                     ("Semarang", "Pekalongan", 95),
+                     ("Semarang", "Tegal", 161), 
+                     ("Yogyakarta", "Surakarta", 65),
+                     ("Surakarta", "Salatiga", 53),
+                     ("Salatiga", "Pekalongan", 136),
+                     ("Pekalongan", "Tegal", 67), 
+                     ("Tegal", "Magelang", 191),
+                     ("Magelang", "Purwokerto", 136),
+                     ("Purwokerto", "Purbalingga", 17), 
+                     ("Purbalingga", "Wonosobo", 75),
+                     ("Wonosobo", "Kebumen", 76),
+                     ("Kebumen", "Cilacap", 83),
+                     ("Cilacap", "Banyumas", 41), 
+                     ("Banyumas", "Banjarnegara", 56),
+                     ("Banjarnegara", "Pemalang", 96),
+                     ("Pemalang", "Cilacap", 135),
+                     ("Yogyakarta", "Salatiga", 82),
+                     ("Magelang", "Surakarta", 89),
+                     ("Semarang", "Magelang", 77),
+                     ("Wonosobo", "Yogyakarta", 93),
+                     ("Kebumen", "Yogyakarta", 97),
+                     ("Cilacap", "Tegal", 124),
+                     ("Tegal", "Purwokerto", 101),
+                     ("Kebumen", "Magelang", 85),
+                     ("Yogyakarta", "Cilacap", 171),
+                     ("Semarang", "Surakarta", 101),
+                     ("Purbalingga", "Tegal", 82),
+                     ("Wonosobo", "Pekalongan", 84)]
+
+for edge in edges_jawa_tengah:
+    peta_jawa_tengah.tambahkanJalan(edge[0], edge[1], edge[2])
+
+peta_jawa_tengah.printPeta()
+print('----------------------------------------------')
+
+jarakSemuaKota = peta_jawa_tengah.djikstra("Semarang")
+print("Jarak Kota Berikut Nya dari Semarang:")
+for kota, jarak in jarakSemuaKota.items():
+    print(kota, "adalah", jarak, "KM")
